@@ -5,33 +5,33 @@
  * PHP Version 5.3
  *
  * @category  Tracks
- * @package   EventHandler
+ * @package   Event
  * @author    Sean Crystal <sean.crystal@gmail.com>
  * @copyright 2011 Sean Crystal
  * @license   http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link      https://github.com/spiralout/Tracks
  */
 
-namespace Tracks\EventHandler;
+namespace Tracks\Event;
+use Tracks\Model\Guid;
 
 /**
- * Interface for event handlers
+ * Domain Events with known Event Handlers class
+ *
+ * These events will know which IEventHandlers will be handling them.
  *
  * @category  Tracks
- * @package   EventHandler
- * @author    Sean Crystal <sean.crystal@gmail.com>
+ * @package   Event
+ * @author    Doug Hurst <dalan.hurst@gmail.com>
  * @copyright 2011 Sean Crystal
  * @license   http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link      https://github.com/spiralout/Tracks
  */
-interface IEventHandler
+abstract class KnownHandler
+extends Base
 {
     /**
-     * Execute the Event Handler
-     *
-     * @param Tracks\Event\Base $event An Event
-     *
-     * @return null
+     * @var array<IEventHandler> Set of Event Handlers for this Event
      */
-    public function execute(\Tracks\Event\Base $event);
+    public $handlers = array();
 }
