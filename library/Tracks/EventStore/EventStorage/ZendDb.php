@@ -177,7 +177,7 @@ class ZendDb implements IEventStore
     private function _getEntityByGuid(Guid $guid)
     {
         $select = $this->_dbh->select()
-            ->from('event', array('*'))
+            ->from('entity', array('*'))
             ->where('guid = ? ', (string) $guid);
         $row = $this->_dbh->fetchRow($select);
 
