@@ -31,7 +31,6 @@ use Tracks\Model\Entity, Tracks\Model\Guid;
  */
 class File implements ISnapshotStore
 {
-
     /**
      * Constructor
      *

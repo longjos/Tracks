@@ -27,7 +27,6 @@ use Tracks\Exception\HandlerAlreadyRegistered;
  */
 abstract class Entity
 {
-
     /**
      * Load an array of events onto this entity
      *

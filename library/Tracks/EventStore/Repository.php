@@ -26,9 +26,8 @@ use Tracks\Model\AggregateRoot, Tracks\Model\Entity, Tracks\Model\Guid;
  * @license   http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link      https://github.com/spiralout/Tracks
  */
-class Repository
+class Repository implements IRepository
 {
-
     const SNAPSHOT_FREQUENCY = 100;
 
     /**
