@@ -26,7 +26,7 @@ class UnitOfWork implements IUnitOfWork
             foreach ($this->_registeredSaves as $aggregateRoot) {
                 $this->_repository->save($aggregateRoot);
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $transaction and $transaction->rollback();
             throw $e;
         }
