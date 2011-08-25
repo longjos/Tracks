@@ -2,7 +2,7 @@
 require_once 'PHPUnit/Framework/TestCase.php';
 use Tracks\UnitOfWork\UnitOfWork;
 
-class UnitOfWorkTest extends PHPUnit_Framework_TestCase
+class Tracks_UnitOfWork_UnitOfWorkTest extends PHPUnit_Framework_TestCase
 {
     private $unitOfWork;
 
