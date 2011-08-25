@@ -41,6 +41,7 @@ class Tracks_UnitOfWork_UnitOfWorkTest extends PHPUnit_Framework_TestCase
         $transaction = $this->getMock('Tracks\UnitOfWork\ITransaction');
         $transaction->expects($this->once())->method('begin');
         $transaction->expects($this->once())->method('commit');
+        $transaction->expects($this->never())->method('rollback');
 
         $this->unitOfWork = new UnitOfWork($repository);
         $this->unitOfWork->registerSave($aggregateRoot);
@@ -61,6 +62,7 @@ class Tracks_UnitOfWork_UnitOfWorkTest extends PHPUnit_Framework_TestCase
 
         $transaction = $this->getMock('Tracks\UnitOfWork\ITransaction');
         $transaction->expects($this->once())->method('begin');
+        $transaction->expects($this->never())->method('commit');
         $transaction->expects($this->once())->method('rollback');
 
         $this->unitOfWork = new UnitOfWork($repository);

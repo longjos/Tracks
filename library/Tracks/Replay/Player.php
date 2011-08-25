@@ -31,7 +31,7 @@ class Player
             foreach ($this->_stream as $event) {
                 $this->_router->route($event);
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $transaction and $transaction->rollback();
             throw $e;
         }

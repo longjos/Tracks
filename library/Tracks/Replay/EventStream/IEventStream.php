@@ -1,5 +1,5 @@
 <?php
-namespace Tracks\Replay;
+namespace Tracks\Replay\EventStream;
 
 interface IEventStream extends \Iterator
 {
