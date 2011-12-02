@@ -20,11 +20,9 @@ require_once 'Employee.php';
 require_once 'Position.php';
 require_once 'Welcomer.php';
 
-$router = new \Tracks\EventHandler\ConfigBasedRouter('events.ini');
-
 $repository = new \Tracks\EventStore\Repository(
     new \Tracks\EventStore\EventStorage\Memory,
-    $router,
+    new \Tracks\EventHandler\ConfigBasedRouter('events.ini'),
     new \Tracks\EventStore\SnapshotStorage\Memory
 );
 
