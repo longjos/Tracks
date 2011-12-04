@@ -71,9 +71,14 @@ class File implements ISnapshotStore
     public function load(Guid $guid)
     {
         if (file_exists($this->_getFilename($guid))) {
-            return unserialize(file_get_contents($this->_getFilename($guid)));
-        } else {
-            return null;
+            $entity = unserialize(file_get_contents($this->_getFilename($guid)));
+            if ($entity instanceof \Tracks\Model\IUpgradable
+                && !$entity->isUpgraded()
+            ) {
+                $entity->upgradeModel();
+                $this->save($entity);
+            }
+            return $entity;
         }
     }
 

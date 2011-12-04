@@ -41,9 +41,14 @@ class Memory implements ISnapshotStore
     public function load(Guid $guid)
     {
         if (isset($this->_snapshots[(string) $guid])) {
-            return $this->_snapshots[(string) $guid];
-        } else {
-            return null;
+            $entity = $this->_snapshots[(string) $guid];
+            if ($entity instanceof \Tracks\Model\IUpgradable
+                && !$entity->isUpgraded()
+            ) {
+                $entity->upgradeModel();
+                $this->save($entity);
+            }
+            return $entity;
         }
     }
 
