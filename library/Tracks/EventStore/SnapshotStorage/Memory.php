@@ -42,7 +42,7 @@ class Memory implements ISnapshotStore
     {
         if (isset($this->_snapshots[(string) $guid])) {
             $entity = $this->_snapshots[(string) $guid];
-            if ($entity instanceof \Tracks\Model\IUpgradable
+            if ($entity instanceof \Tracks\Model\IUpgradeable
                 && !$entity->isUpgraded()
             ) {
                 $entity->upgradeModel();

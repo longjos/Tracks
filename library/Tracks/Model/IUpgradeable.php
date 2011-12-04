@@ -15,7 +15,7 @@
 namespace Tracks\Model;
 
 /**
- * Interface for Entities which can be upgrade
+ * Interface for Entities which can be upgraded
  *
  * @category  Tracks
  * @package   Model
@@ -24,7 +24,7 @@ namespace Tracks\Model;
  * @license   http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link      https://github.com/spiralout/Tracks
  */
-interface IUpgradable
+interface IUpgradeable
 {
     /**
      * Returns true if all upgrades have been performed

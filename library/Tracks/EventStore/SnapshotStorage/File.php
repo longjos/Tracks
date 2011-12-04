@@ -72,7 +72,7 @@ class File implements ISnapshotStore
     {
         if (file_exists($this->_getFilename($guid))) {
             $entity = unserialize(file_get_contents($this->_getFilename($guid)));
-            if ($entity instanceof \Tracks\Model\IUpgradable
+            if ($entity instanceof \Tracks\Model\IUpgradeable
                 && !$entity->isUpgraded()
             ) {
                 $entity->upgradeModel();
