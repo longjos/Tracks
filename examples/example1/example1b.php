@@ -22,7 +22,7 @@ require_once 'Welcomer.php';
 
 $repository = new \Tracks\EventStore\Repository(
     new \Tracks\EventStore\EventStorage\Memory,
-    new \Tracks\EventHandler\ConfigBasedRouter('events.ini'),
+    new \Tracks\EventHandler\ConfigBasedRouter(dirname(__FILE__).DIRECTORY_SEPARATOR.'events.ini'),
     new \Tracks\EventStore\SnapshotStorage\Memory
 );
 
