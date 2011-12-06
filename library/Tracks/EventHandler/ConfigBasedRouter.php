@@ -72,10 +72,6 @@ class ConfigBasedRouter implements IEventRouter
     /**
      * Add an event handler to the routing table
      *
-     * The 2nd argument may be either an instantiated object, or the name of a
-     * class to instantiate. In the second case, the class should not have any
-     * required parameters on it's constructor.
-     *
      * @param string        $eventClass The Event classname
      * @param IEventHandler $handler    An EventHandler
      *
