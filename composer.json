@@ -1,0 +1,7 @@
+{
+	"name": "Tracks",
+	"description": "A CQRS Framework for PHP",
+	"autoload": {
+		"psr-0": { "Tracks\\": "library/" }
+	}
+}
