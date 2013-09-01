@@ -105,10 +105,11 @@ class ZendDb implements IEventStore
         assert('is_int($version)');
         $select = $this->_dbh->select()
             ->from('event', array('*'))
-            ->where('guid', (string) $guid)
             ->order('date_created')
             ->order('id')
-            ->limit($version, PHP_INT_MAX);
+            ->offset($version)
+            ->limit(PHP_INT_MAX);
+        $select->where->equalTo('guid', (string) $guid);
         $statement = $this->_dbh->prepareStatementForSqlObject($select);
         $result = $statement->execute();
         $resultSet = new \Zend\Db\ResultSet\ResultSet;
