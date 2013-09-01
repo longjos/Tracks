@@ -19,26 +19,27 @@ use Tracks\Model\Guid, Tracks\Model\Entity;
 
 
 /**
- * Zend_Db based implementation of the event store.
+ * Zend_Db2 based implementation of the event store.
  *
- * Requires two tables in a relational database compatible with Zend_Db. See
+ * Requires two tables in a relational database compatible with Zend_Db2. See
  * the schema directory for SQL to create the necessary tables.
  *
  * @category   Tracks
  * @package    EventStore
  * @subpackage EventStorage
  * @author     Sean Crystal <sean.crystal@gmail.com>
+ * @author     Josh Long <longjos@gmail.com>
  * @copyright  2011 Sean Crystal
  * @license    http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link       https://github.com/spiralout/Tracks
  */
-class ZendDb implements IEventStore
+class ZendDb2 implements IEventStore
 {
 
     /**
      * Constructor
      *
-     * @param Adapter $dbh A Zend Database Adapter
+     * @param Adapter $dbh A Zend Framework 2.0  Database Adapter
      *
      * @return null
      */
