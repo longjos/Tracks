@@ -24,6 +24,6 @@ namespace Tracks\Exception;
  * @license   http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * @link      https://github.com/spiralout/Tracks
  */
-class Base extends Exception
+class Base extends \Exception
 {
 }
