@@ -52,7 +52,6 @@ $employer->changeEmployeeTitle($fryGuid, 'Narwhal Trainer');
 $repository->save($employer);
 
 echo PHP_EOL.$employer->name.PHP_EOL;
-var_dump($employer);
 foreach ($employer->employees as $employee) {
     echo '  - '.$employee->name.', '.$employee->position->title.PHP_EOL;
 }
